@@ -20,7 +20,8 @@ public:
 	DoubleLinkedList();
 	void addNode();
 	bool search(int rollNo, Node** previous, Node** current);
-	
+	bool deleteNode(int rollNo);
+
 };
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
