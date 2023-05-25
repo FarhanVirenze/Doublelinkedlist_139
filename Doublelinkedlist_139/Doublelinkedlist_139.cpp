@@ -78,6 +78,76 @@ void DoubleLinkedList::addNode() {
 	current->next = newNode; //step 7
 }
 
+bool DoubleLinkedList::search(int rollNo, Node** previous, Node** current) {
+	*previous = START; //step 1.a
+	*current = START; //step1.b
+	while (*current != NULL && rollNo != (*current)->noMhs) { //step 1.c
+		*previous = *current; //step 1.d
+		*current = (*current)->next; //step 1.e
+	}
+	return (*current != NULL);
+}
+
+bool DoubleLinkedList::deleteNode(int rollNo) {
+	Node* previous, * current;
+	previous = current = NULL;
+	if (search(rollNo, &previous, &current) == false)
+		return false;
+	if (current->next != NULL)
+		current->next->prev = previous; //step 2
+	if (previous != NULL)
+		previous->next = current->next; //step 3
+	else
+		START = current->next;
+
+	delete current; //step 4
+	return true;
+}
+
+bool DoubleLinkedList::listEmpty() {
+	return (START = NULL);
+}
+
+void DoubleLinkedList::traverse() {
+	if (listEmpty())
+		cout << "\nList is empty" << endl;
+	else {
+		cout << "\nRecords in ascending order of roll number are:" << endl;
+		Node* currentNode = START;
+		while (currentNode != NULL) {
+			cout << currentNode->noMhs << " " << currentNode->name << endl;
+			currentNode = currentNode->next;
+		}
+	}
+}
+
+void DoubleLinkedList::revtraverse() {
+	if (listEmpty()) {
+		cout << "\nList is empty" << endl;
+	}
+
+	else {
+		cout << "\nRecords in descending order of roll number are:" << endl;
+		Node* currentNode = START;
+		while (currentNode->next != NULL)
+			currentNode = currentNode->next;
+
+		while (currentNode != NULL) {
+			cout << currentNode->noMhs << " " << currentNode->name << endl;
+			currentNode = currentNode->prev;
+		}
+	}
+}
+
+void DoubleLinkedList::hapus() {
+	if (listEmpty()) {
+		cout << "\nList is empty" << endl;
+
+	}
+	cout << "\nEnter the roll number of the student whose record is to be deleted: ";
+	int rollNo;
+
+}
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
