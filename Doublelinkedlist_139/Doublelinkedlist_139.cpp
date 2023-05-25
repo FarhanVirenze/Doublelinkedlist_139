@@ -19,6 +19,8 @@ private:
 public:
 	DoubleLinkedList();
 	void addNode();
+	bool search(int rollNo, Node** previous, Node** current);
+	
 };
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
