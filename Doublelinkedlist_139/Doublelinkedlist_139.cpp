@@ -5,11 +5,15 @@
 #include <string>
 using namespace std;
 
-class node {
+class Node {
 public:
 	int noMhs;
-
+	string name;
+	Node* next;
+	Node* prev;
 };
+
+
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
