@@ -75,8 +75,9 @@ void DoubleLinkedList::addNode() {
 	newNode->prev = current; //step 5
 	if (current->next != NULL)
 		current->next->prev = newNode; //step 6
-
+	current->next = newNode; //step 7
 }
+
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
