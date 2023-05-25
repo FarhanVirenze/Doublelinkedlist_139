@@ -23,6 +23,8 @@ public:
 	bool deleteNode(int rollNo);
 	bool listEmpty();
 	void traverse();
+	void revtraverse();
+
 };
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
