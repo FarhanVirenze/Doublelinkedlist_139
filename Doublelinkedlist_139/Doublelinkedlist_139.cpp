@@ -22,7 +22,7 @@ public:
 	bool search(int rollNo, Node** previous, Node** current);
 	bool deleteNode(int rollNo);
 	bool listEmpty();
-
+	void traverse();
 };
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
