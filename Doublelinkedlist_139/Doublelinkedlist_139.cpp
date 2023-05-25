@@ -14,7 +14,11 @@ public:
 };
 
 class DoubleLinkedList {
-
+private:
+	Node* START;
+public:
+	DoubleLinkedList();
+	void addNode();
 };
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
