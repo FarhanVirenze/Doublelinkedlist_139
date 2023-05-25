@@ -33,6 +33,7 @@ DoubleLinkedList::DoubleLinkedList() {
 }
 
 void DoubleLinkedList::addNode() {
+	int nim;
 
 }
 
